@@ -73,23 +73,23 @@ const MerchantForm = () => {
             >
                 <h1>GM Pay Merchant Form</h1>
                 <Form.Item label="Surname">
-                    <Input onChange={(e) => setSurname(e.target.value)} />
+                    <Input required onChange={(e) => setSurname(e.target.value)} />
                 </Form.Item>
                 <Form.Item label="Firstname">
-                    <Input onChange={(e) => setFirstname(e.target.value)} />
+                    <Input required onChange={(e) => setFirstname(e.target.value)} />
                 </Form.Item>
                 <Form.Item label="Business Name">
                     <Input onChange={(e) => setBusinessName(e.target.value)} />
                 </Form.Item>
                 <Form.Item label="Business ID">
-                    <Input onChange={(e) => setBusinessId(e.target.value)} />
+                    <Input required onChange={(e) => setBusinessId(e.target.value)} />
                 </Form.Item>
                
                 <Form.Item label="Date of establishment">
-                    <DatePicker format={"YYYY-MM-DD"} onChange={handleDate} />
+                    <DatePicker required format={"YYYY-MM-DD"} onChange={handleDate} />
                 </Form.Item>
                 <Form.Item type="number" label="Average Transaction Volume (NGN)">
-                    <Input onChange={(e) => setTransactionVolume(e.target.value)} />
+                    <Input required onChange={(e) => setTransactionVolume(e.target.value)} />
                 </Form.Item>
 
             
