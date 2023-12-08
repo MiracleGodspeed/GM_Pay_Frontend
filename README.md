@@ -10,4 +10,4 @@ npm i
 npm start
 
 
-##Also modify the axios base url accordingly to match the port for the apis on your local machine
+##Also locate the endpoint file (util/endpoint.js) to modify the axios base url to match the port for the apis on your local machine
