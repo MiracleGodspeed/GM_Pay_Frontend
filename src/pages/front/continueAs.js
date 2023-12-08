@@ -17,7 +17,7 @@ function ProceedAs() {
                     Merchant
                 </Link>
                 <Link
-                    to="/proceesAs"
+                    to="/customerIndex"
                     style={{ color: "#78d1ef", marginTop:"10px" }}
                 >
                     Customer

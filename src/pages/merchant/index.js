@@ -44,7 +44,8 @@ const MerchantForm = () => {
             }
         })
         .catch((err) => {
-            console.log(err)
+                alert("oops! something went wrong")
+                console.log(err)
             setSaving(false)
         })
     }

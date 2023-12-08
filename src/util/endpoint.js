@@ -26,12 +26,15 @@ const Endpoint = {
    
 
     createMerchant: (data) => {
-        console.log(data, "dddddd")
         return axios.post(`/Merchant/CreateMerchant`, data, headers)
     },
+
+    createCustomer: (data) => {
+        return axios.post(`/Customer/CreateCustomer`, data, headers)
+    },
     
-    getUnpublishedBets: (data) => {
-        return axios.get(`/Bet/GetUserUnpublishedBets?userId=${data}`, headers)
+    getCustomerTransactionHistory: (data) => {
+        return axios.get(`/Customer/TransactionsByCustomerId?customerId=${data}`, headers)
     },
    
     

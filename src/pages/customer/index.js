@@ -15,7 +15,6 @@ const CustomerForm = () => {
     const [customerNumber, setCustomerNumber] = useState("");
     const [nin, setNin] = useState("");
     const [birthDate, setBirthDate] = useState("");
-    const [transactionVolume, setTransactionVolume] = useState("");
     const [saving, setSaving] = useState(false);
 
     const saveDetails = () => {
@@ -28,13 +27,23 @@ const CustomerForm = () => {
             "customerNumber": customerNumber
         }
         console.log(payload)
-        Endpoint.createMerchant(payload)
+        Endpoint.createCustomer(payload)
             .then((res) => {
-                console.log(res)
-                setSaving(false)
+                console.log(res?.data)
+            setSaving(false)
+            if(res?.data?.isSuccess){
+                alert(res?.data?.message)
+                window.location.href = "/"
+            }
+            else{
+                if(!res?.data?.isSuccess){
+                    alert(res?.data?.message)
+                }
+            }
             })
             .catch((err) => {
                 console.log(err)
+                alert("oops! something went wrong")
                 setSaving(false)
             })
     }
@@ -59,7 +68,7 @@ const CustomerForm = () => {
                 }}
                 onFinish={() => saveDetails()}
             >
-                <h1>GM Pay Merchant Form</h1>
+                <h1>GM Pay Customer Form</h1>
                 <Form.Item label="Surname">
                     <Input onChange={(e) => setSurname(e.target.value)} />
                 </Form.Item>
@@ -74,7 +83,7 @@ const CustomerForm = () => {
                 </Form.Item>
 
                 <Form.Item label="Date of Birth">
-                    <DatePicker format={"YYYY/MM/DD"} onChange={handleDate} />
+                    <DatePicker format={"YYYY-MM-DD"} onChange={handleDate} />
                 </Form.Item>
 
                 <Form.Item label=" ">
